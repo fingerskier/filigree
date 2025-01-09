@@ -18,19 +18,16 @@ const handleHashChange = event=>{
     query[key] = value
   })
   
-  const context = path?.[1]? path: path[0]
+  const context = path
   
   const payload = {context, query}
   
-  console.log('payload:', payload)
   d3.select(window).dispatch('state', {detail: payload})
 }
 
 
 window.addEventListener('load', event=>{
   handleHashChange()
-  
-  
   
   window.addEventListener('hashchange', handleHashChange)
   window.addEventListener('popstate', handleHashChange)
