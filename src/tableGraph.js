@@ -131,8 +131,12 @@ function createTableBubbles(
         
         // Scale for bubble size
         const radius = d3.scaleSqrt()
-        .domain([0, d3.max(data, d => d.count)])
-        .range([30, 80])
+            .domain([0, d3.max(data, d => d.count)])
+            .range([30, 80])
+        
+        const colorScale = d3.scaleOrdinal()
+            .domain(data.map(d => d.tableName))
+            .range(d3.schemeCategory10)
         
         // Create force simulation with both nodes and links
         const simulation = d3.forceSimulation(data)
@@ -161,20 +165,20 @@ function createTableBubbles(
         
         // Add circles with hover effect
         bubbles.append("circle")
-        .attr("r", d => radius(d.count))
-        .style("fill", "steelblue")
-        .style("opacity", 0.7)
-        .on("mouseover", function() {
-            d3.select(this)
-                .style("opacity", 0.9)
-                .style("stroke", "#fff")
-                .style("stroke-width", 2)
-        })
-        .on("mouseout", function() {
-            d3.select(this)
-                .style("opacity", 0.7)
-                .style("stroke", "none")
-        })
+            .attr("r", d => radius(d.count))
+            .style("fill", d => colorScale(d.tableName))
+            .style("opacity", 0.7)
+            .on("mouseover", function() {
+                d3.select(this)
+                    .style("opacity", 0.9)
+                    .style("stroke", "#fff")
+                    .style("stroke-width", 2)
+            })
+            .on("mouseout", function() {
+                d3.select(this)
+                    .style("opacity", 0.7)
+                    .style("stroke", "none")
+            })
         
         
         // Add text

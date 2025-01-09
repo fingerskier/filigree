@@ -16,7 +16,25 @@ body {
 }
 
 
+nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+
 #table-graph {
   position: absolute;
   border: thin solid black;
+}
+
+
+#table-records {
+  position: absolute;
+  border: thick outset gray;
+  padding: 1rem;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f0f0f0;
 }
