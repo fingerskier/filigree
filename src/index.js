@@ -1,4 +1,7 @@
 import createTableBubbles from './tableBubbles.js'
 
 // Initialize the table bubbles visualization
-createTableBubbles('bubble-chart');
+createTableBubbles('table-graph', {
+  height: 400,
+  width: 600,
+})

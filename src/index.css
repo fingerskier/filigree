@@ -16,8 +16,7 @@ body {
 }
 
 
-#bubble-chart {
-  position: relative;
-  width: 90%;
-  height: 100%;
+#table-graph {
+  position: absolute;
+  border: thin solid black;
 }
