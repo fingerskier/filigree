@@ -1,0 +1,19 @@
+{
+  "roles": {
+    "admin": {
+      "displayName": "Administrator",
+      "description": "Full access to manage the application.",
+      "permissions": {
+        "manage": "*"
+      }
+    },
+    "user": {
+      "displayName": "End-User",
+      "description": "Read-only access.",
+      "permissions": {
+        "add": "*",
+        "update": "*"
+      }
+    }
+  }
+}
