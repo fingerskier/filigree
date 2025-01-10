@@ -82,7 +82,7 @@ async function fetchData() {
 }
 
 
-function createTableBubbles(
+function createTableGraph(
     containerId = 'table-graph',
     options,
 ) {
@@ -158,7 +158,7 @@ function createTableBubbles(
         .style("cursor", "pointer")
         .on("click", (event, d) => {
             // Update URL with table query parameter
-            const newUrl = `${window.location.pathname}?table=${d.tableName}#table/${d.tableName}`
+            const newUrl = `${window.location.pathname}#table/${d.tableName}`
             window.location.href = newUrl
         })
         
@@ -220,4 +220,4 @@ function createTableBubbles(
     })
 }
 
-export default createTableBubbles
+export default createTableGraph

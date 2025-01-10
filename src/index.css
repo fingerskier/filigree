@@ -25,11 +25,26 @@ nav {
 
 #table-graph {
   position: absolute;
+  top: 5%;
+  bottom: 5%;
+  left: 5%;
+  right: 5%;
   border: thin solid black;
 }
 
 
 #table-records {
+  position: absolute;
+  border: thick outset gray;
+  padding: 1rem;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f0f0f0;
+}
+
+
+#record-editor {
   position: absolute;
   border: thick outset gray;
   padding: 1rem;

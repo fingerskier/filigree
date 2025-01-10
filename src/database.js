@@ -11,7 +11,7 @@ export const schema = {
   members: '@id, name, realmId',
   roles: '[realmId+name]',
   
-  data: '@memberId, stuff',
+  data: '@id, memberId, name, stuff',
 }
 
 
